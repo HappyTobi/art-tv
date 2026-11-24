@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Art TV — design preview</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #f3efe8; }
+    #stage { position: absolute; width: 1920px; height: 1080px; transform-origin: 0 0; -webkit-transform-origin: 0 0; }
+  </style>
+  <link rel="stylesheet" href="art.css">
+</head>
+<body>
+  <div id="stage"></div>
+  <script src="artworks.js"></script>
+  <script src="preview.js"></script>
+  <script src="art.js"></script>
+  <script>ArtTV.start();</script>
+</body>
+</html>

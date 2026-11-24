@@ -1,0 +1,52 @@
+[
+  {
+    "id": "mediterranean",
+    "title": "Mediterranean light",
+    "file": "mediterranean.jpg"
+  },
+  {
+    "id": "winter-reflections",
+    "title": "Winter reflections (Colby Thomas)",
+    "file": "colby-thomas-r6TLRDY4Ll0-unsplash.jpg"
+  },
+  {
+    "id": "soft-autumn-leaf",
+    "title": "Soft autumn leaf (Danielle Suijkerbuijk)",
+    "file": "danielle-suijkerbuijk-fWbPSKOKA4Q-unsplash.jpg"
+  },
+  {
+    "id": "ivy-wall",
+    "title": "Ivy wall (Eugenia Pan'kiv)",
+    "file": "eugenia-pan-kiv--7P_uCaEprw-unsplash.jpg"
+  },
+  {
+    "id": "winter-forest",
+    "title": "Winter forest (Krists Luhaers)",
+    "file": "krists-luhaers-e_z1BLzRbS8-unsplash.jpg"
+  },
+  {
+    "id": "autumn-sunlight",
+    "title": "Autumn sunlight (Pascal van de Vendel)",
+    "file": "pascal-van-de-vendel-ZNyu7QTaIrI-unsplash.jpg"
+  },
+  {
+    "id": "ceiling-fresco",
+    "title": "Ceiling fresco (Adrianna Geo)",
+    "file": "adrianna-geo-1rBg5YSi00c-unsplash.jpg"
+  },
+  {
+    "id": "bird-illustration",
+    "title": "Bird illustration (Boston Public Library)",
+    "file": "boston-public-library-YoK5pBcSY8s-unsplash.jpg"
+  },
+  {
+    "id": "colorful-paintbrushes",
+    "title": "Colorful paintbrushes (RhondaK)",
+    "file": "rhondak-native-florida-folk-artist-_Yc7OtfFn-0-unsplash.jpg"
+  },
+  {
+    "id": "mountain-lake",
+    "title": "Mountain lake (The Metropolitan Museum of Art)",
+    "file": "the-metropolitan-museum-of-art-9XpO8WsYNdI-unsplash.jpg"
+  }
+]

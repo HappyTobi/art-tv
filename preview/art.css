@@ -1,0 +1,261 @@
+.art-surface {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: #f3efe8;
+  color: #30312f;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  overflow: hidden;
+}
+.art-mount {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #fffbf5;
+  border: 2px solid #d6cbbd;
+}
+.art-picture {
+  position: absolute;
+  left: 62px;
+  top: 62px;
+  right: 62px;
+  bottom: 62px;
+  background-color: #fffbf5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 8px solid;
+  border-color: #b9ab98 #e8dece #ded2c2 #c6b8a5;
+  box-sizing: border-box;
+}
+.art-print {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.art-menu-blur {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 65%, #000 88%);
+  mask-image: linear-gradient(to bottom, transparent 65%, #000 88%);
+}
+.art-menu-blur .art-mount {
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+}
+.art-menu-veil {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  background: linear-gradient(to bottom, rgba(255, 251, 245, 0) 65%, rgba(255, 251, 245, 0.6) 88%);
+  pointer-events: none;
+}
+.art-menu-visible .art-menu-blur, .art-menu-visible .art-menu-veil {
+  visibility: visible;
+  clip-path: inset(72px);
+}
+.art-nav {
+  position: absolute;
+  left: 96px;
+  bottom: 86px;
+  width: 1728px;
+  height: 112px;
+  white-space: nowrap;
+}
+.art-nav-hidden { visibility: hidden; pointer-events: none; }
+.art-surface button {
+  font: inherit;
+  color: #30312f;
+  background: transparent;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+}
+.art-nav button {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 272px;
+  height: 112px;
+  margin: 0 8px;
+  border-radius: 24px;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+.art-nav:before, .art-nav:after {
+  content: '';
+  position: absolute;
+  left: 66.6667%;
+  top: 20px;
+  width: 1px;
+  height: 72px;
+  background: #d5cfc6;
+  pointer-events: none;
+}
+.art-nav:after { left: 83.3333%; }
+.art-surface button:focus {
+  background: #fff;
+}
+.art-nav button:focus {
+  -webkit-transform: translateY(-4px) scale(1.05);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.22);
+  z-index: 1;
+}
+.flat .art-nav button { box-shadow: none !important; }
+.art-label {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.art-panel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(39, 35, 29, 0.28);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.art-window {
+  position: absolute;
+  left: 56px;
+  top: 56px;
+  right: 56px;
+  bottom: 56px;
+  border-radius: 32px;
+  background: #f8f5ef;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+}
+.art-panel-header {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 28px;
+  height: 110px;
+  border-bottom: 1px solid #ded8ce;
+}
+.art-kicker { font-size: 21px; color: #746e64; }
+.art-panel h1 { font-size: 46px; margin: 4px 220px 0 0; line-height: 1.15; }
+.art-panel h2 { font-size: 32px; font-weight: 700; margin: 0 0 22px; }
+.art-panel button {
+  box-sizing: border-box;
+  padding: 18px 24px;
+  border-radius: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
+  -webkit-transition: -webkit-transform 0.18s;
+  transition: transform 0.18s;
+}
+.art-panel .art-close {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 184px;
+  height: 80px;
+  text-align: center;
+}
+.art-sidebar {
+  position: absolute;
+  left: 32px;
+  top: 160px;
+  bottom: 32px;
+  width: 400px;
+  box-sizing: border-box;
+  padding: 18px;
+  overflow: auto;
+  border-radius: 24px;
+  background: #efeae2;
+}
+.art-sidebar button { display: block; width: 100%; min-height: 84px; margin-bottom: 10px; }
+.art-sidebar .art-section { background: #e4ddd2; }
+.art-sidebar .art-section:focus { background: #fff; }
+.art-content {
+  position: absolute;
+  left: 472px;
+  right: 32px;
+  top: 160px;
+  bottom: 32px;
+  overflow: auto;
+  padding: 12px;
+  box-sizing: border-box;
+}
+.art-gallery button {
+  display: inline-block;
+  width: 31.3%;
+  margin: 0 1% 20px;
+  padding: 14px;
+  height: 304px;
+  vertical-align: top;
+  background: #eee8de;
+  white-space: normal;
+  font-weight: 400;
+}
+.art-gallery button:focus { background: #fff; }
+.art-gallery img {
+  width: 100%;
+  height: 168px;
+  box-sizing: border-box;
+  padding: 8px;
+  object-fit: contain;
+  background: #fffbf5;
+  display: block;
+  margin-bottom: 14px;
+}
+.art-card-title { display: block; height: 60px; overflow: hidden; font-size: 24px; line-height: 30px; }
+.art-selected {
+  display: inline-block;
+  padding: 3px 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: #e4ddd2;
+  font-size: 18px;
+}
+.art-input-window {
+  left: 480px;
+  right: auto;
+  top: 50%;
+  bottom: auto;
+  width: 960px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.art-input-window h1 { font-size: 34px; }
+.art-input-list { position: absolute; left: 32px; right: 32px; top: 154px; bottom: 24px; overflow: auto; padding: 8px; }
+.art-input-list button { display: block; width: 100%; min-height: 80px; margin-bottom: 12px; }
+.flat .art-panel button { box-shadow: none !important; }
+.art-notice {
+  position: absolute;
+  top: 20px;
+  left: 480px;
+  width: 960px;
+  padding: 18px;
+  background: #f3efe8;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 24px;
+}

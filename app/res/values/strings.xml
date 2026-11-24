@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_button_label">Art TV Home Button</string>
+    <string name="home_button_description">Opens Art TV when you press Home on a supported Sony BRAVIA. Other keys pass through. Does not read screen content, record keys, or send them over the network.</string>
+</resources>

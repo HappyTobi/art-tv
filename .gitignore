@@ -1,0 +1,33 @@
+# Generated Android builds and desktop preview
+/out/
+*.apk
+*.apk.idsig
+*.aab
+
+# Private configuration, signing material, and TV exports
+config.properties
+local.properties
+.keystore-password
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+adbkey
+adbkey.pub
+.env
+.env.*
+*.local.json
+.*.local.json-*
+/local/
+
+# Python and local editor/OS files
+__pycache__/
+*.py[cod]
+/.venv/
+/.pytest_cache/
+/.idea/
+/.vscode/
+*.iml
+.DS_Store
