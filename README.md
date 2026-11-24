@@ -37,7 +37,7 @@ Sony's paired local remote-control API instead of Android channel IDs.
 
 Art TV (`io.happytobi.arttv`) can be the default Android Home app. Once selected, it handles the remote's
 **Home** button and opens when Android goes to Home after a full boot. Sony firmware can still resume
-the last input on wake from standby. Art TV does not use a boot receiver or disable Sony Home.
+the last input on wake from standby. Art TV does not disable Sony Home.
 Open **Settings → Sony · Home Screen** in Art TV to visit the original launcher without changing the default.
 
 ### Use the remote's Home button on the BRAVIA 4K GB ATV3
@@ -50,7 +50,7 @@ Home-button shortcut was confirmed on a BRAVIA 4K GB ATV3 with the physical remo
 3. Press **Home** on the remote to open Art TV.
 
 To make **Home** open Sony Home again, turn the service off in the same menu. This shortcut
-keeps Sony Home enabled, does not change the default launcher, and does not start Art TV at boot.
+keeps Sony Home enabled, does not change the default launcher, and does not by itself start Art TV at boot.
 
 The service only handles the Home key on this Sony model. It does not read screen content, record
 keystrokes, or send them over the network. It is off until you enable it on the TV.
@@ -58,6 +58,16 @@ keystrokes, or send them over the network. It is off until you enable it on the 
 This separate package does not overwrite the development prototype or import its private preferences.
 Choose your artwork and HDMI port once in the new app; they then remain saved until its data is cleared
 or the app is uninstalled.
+
+### Open Art TV after a restart
+
+On the BRAVIA 4K GB ATV3 running Android 9, open **Settings** inside Art TV and turn **Open at startup**
+on (German: **Beim Start öffnen**). It is off by default and independent of the remote shortcut.
+If the Home-button shortcut is enabled too, Art TV can open sooner when Android connects that service.
+On the tested BRAVIA, it opened about 35 seconds into the reboot with the shortcut enabled, compared
+with about 80 seconds using Android's startup notification alone.
+Sony Home remains the default launcher and may appear first. Art TV only launches automatically when the TV
+is awake and unlocked, not on standby wake. Turn **Open at startup** off to stop automatic launch.
 
 ### Hardware screenshot
 
@@ -147,6 +157,7 @@ no root, ADB loopback approval, or debloat is needed.
 remote's Home button to open Art TV, [enable the shortcut on the TV](#use-the-remotes-home-button-on-the-bravia-4k-gb-atv3).
 The installer does not perform either step automatically: Sony pairing requires the on-screen PIN,
 and the Home-button service requires your approval in the TV's Accessibility settings.
+To launch Art TV after a full reboot, [enable Open at startup](#open-art-tv-after-a-restart) inside Art TV.
 
 ### Open an existing installation
 

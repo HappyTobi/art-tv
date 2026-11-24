@@ -23,6 +23,7 @@ public final class HomeActivity extends Activity {
     @Override protected void onResume() {
         super.onResume();
         art.resume();
+        BootReceiver.noteHomeShown(this);
     }
 
     @Override protected void onPause() {

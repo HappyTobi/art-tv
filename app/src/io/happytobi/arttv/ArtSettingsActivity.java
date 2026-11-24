@@ -98,6 +98,14 @@ public final class ArtSettingsActivity extends Activity {
             if (!SonyTv.openLive(this)) error(Ui.tr("Live TV"));
         });
         action(menu, "Sony · " + Ui.tr("Home Screen"), this::originalHome);
+        if (BootReceiver.supported()) {
+            TextView startup = action(menu, startupLabel(), null);
+            startup.setOnClickListener(v -> {
+                Prefs.setOpenAtStartup(!Prefs.openAtStartup());
+                BootReceiver.noteHomeShown(this);
+                startup.setText(startupLabel());
+            });
+        }
         for (int i = 0; i < actions.size(); i++) {
             actions.get(i).setNextFocusUpId(i == 0 ? closeButton.getId() : actions.get(i - 1).getId());
             actions.get(i).setNextFocusDownId(actions.get(Math.min(i + 1, actions.size() - 1)).getId());
@@ -315,7 +323,7 @@ public final class ArtSettingsActivity extends Activity {
         button.setFocusable(true);
         button.setClickable(true);
         focusStyle(button, Color.TRANSPARENT);
-        button.setOnClickListener(v -> action.run());
+        if (action != null) button.setOnClickListener(v -> action.run());
         return button;
     }
 
@@ -326,6 +334,10 @@ public final class ArtSettingsActivity extends Activity {
         menu.addView(item, size);
         actions.add(item);
         return item;
+    }
+
+    private String startupLabel() {
+        return Ui.trf("Open at startup: {state}", "state", Prefs.openAtStartup() ? Ui.tr("On") : Ui.tr("Off"));
     }
 
     private GradientDrawable shape(int color, int radius) {

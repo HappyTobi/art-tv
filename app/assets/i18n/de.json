@@ -6,6 +6,8 @@
   "Live TV": "Live-TV",
   "Home Screen": "Startbildschirm",
   "On": "An",
+  "Off": "Aus",
+  "Open at startup: {state}": "Beim Start öffnen: {state}",
   "No inputs": "Keine Eingänge",
   "Couldn't open {app}.": "Konnte nicht öffnen: {app}."
 }

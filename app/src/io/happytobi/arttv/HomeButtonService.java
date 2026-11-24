@@ -16,7 +16,9 @@ public final class HomeButtonService extends AccessibilityService {
         if (!"Sony".equalsIgnoreCase(Build.BRAND) || !"BRAVIA 4K GB ATV3".equals(Build.MODEL)) {
             AppLog.w("Home button shortcut is unavailable on this TV model.");
             disableSelf();
+            return;
         }
+        BootReceiver.onShortcutConnected(this);
     }
 
     @Override protected boolean onKeyEvent(KeyEvent event) {

@@ -5,6 +5,7 @@
     android:versionName="1.0">
     <uses-sdk android:minSdkVersion="28" android:targetSdkVersion="33" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-feature android:name="android.software.leanback" android:required="true" />
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
     <application
@@ -35,6 +36,11 @@
             android:name=".ArtSettingsActivity"
             android:exported="false"
             android:screenOrientation="landscape" />
+        <receiver android:name=".BootReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
         <service
             android:name=".HomeButtonService"
             android:exported="true"

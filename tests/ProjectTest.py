@@ -42,9 +42,8 @@ class ProjectTest(unittest.TestCase):
         manifest = ET.parse(ROOT / 'app/AndroidManifest.xml').getroot()
         android = '{http://schemas.android.com/apk/res/android}'
         self.assertEqual('io.happytobi.arttv', manifest.attrib['package'])
-        self.assertEqual(['android.permission.INTERNET'],
-                         [item.attrib[android + 'name'] for item in manifest.findall('uses-permission')])
-        self.assertEqual([], manifest.findall('.//receiver'))
+        self.assertEqual({'android.permission.INTERNET', 'android.permission.RECEIVE_BOOT_COMPLETED'},
+                         {item.attrib[android + 'name'] for item in manifest.findall('uses-permission')})
         activity = manifest.find(f".//activity[@{android}name='.HomeActivity']")
         launcher = {'android.intent.category.LAUNCHER', 'android.intent.category.LEANBACK_LAUNCHER'}
         home = {'android.intent.category.HOME', 'android.intent.category.DEFAULT'}
@@ -53,6 +52,15 @@ class ProjectTest(unittest.TestCase):
             [{entry.get(android + 'name') for entry in intent.findall('category')}
              for intent in activity.findall('intent-filter')
              if intent.find(f"action[@{android}name='android.intent.action.MAIN']") is not None])
+
+    def test_startup_receiver_accepts_only_the_system_boot_broadcast(self):
+        android = '{http://schemas.android.com/apk/res/android}'
+        manifest = ET.parse(ROOT / 'app/AndroidManifest.xml')
+        receiver, = manifest.findall('.//receiver')
+        self.assertEqual('.BootReceiver', receiver.get(android + 'name'))
+        self.assertEqual('false', receiver.get(android + 'exported'))
+        self.assertEqual(['android.intent.action.BOOT_COMPLETED'],
+                         [action.get(android + 'name') for action in receiver.findall('intent-filter/action')])
 
     def test_home_button_service_requests_keys_without_screen_access(self):
         android = '{http://schemas.android.com/apk/res/android}'

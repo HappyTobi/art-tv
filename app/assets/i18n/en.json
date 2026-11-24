@@ -6,6 +6,8 @@
   "Live TV": "Live TV",
   "Home Screen": "Home Screen",
   "On": "On",
+  "Off": "Off",
+  "Open at startup: {state}": "Open at startup: {state}",
   "No inputs": "No inputs",
   "Couldn't open {app}.": "Couldn't open {app}."
 }
